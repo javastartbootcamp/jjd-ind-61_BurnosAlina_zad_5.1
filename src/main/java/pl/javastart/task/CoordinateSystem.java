@@ -10,6 +10,7 @@ public class CoordinateSystem {
         point.setX(scanner.nextInt());
         System.out.println("Podaj Y");
         point.setY(scanner.nextInt());
+        checkQuarter();
     }
 
     void checkQuarter() {

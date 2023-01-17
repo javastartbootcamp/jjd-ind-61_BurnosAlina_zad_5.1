@@ -7,6 +7,5 @@ public class Main {
         CoordinateSystem coordinateSystem = new CoordinateSystem();
         Scanner scanner = new Scanner(System.in);
         coordinateSystem.run(scanner);
-        coordinateSystem.checkQuarter();
     }
 }
