@@ -14,52 +14,50 @@ public class CoordinateSystem {
 
     void checkQuarter() {
         if (point.getX() > 0 && point.getY() > 0) {
-            showQuarterInfo();
+            System.out.println(showQuarterInfo());
         } else if (point.getX() < 0 && point.getY() > 0) {
-            showQuarterInfo();
+            System.out.println(showQuarterInfo());
         } else if (point.getX() < 0 && point.getY() < 0) {
-            showQuarterInfo();
+            System.out.println(showQuarterInfo());
         } else if (point.getX() > 0 && point.getY() < 0) {
-            showQuarterInfo();
+            System.out.println(showQuarterInfo());
         } else if (point.getX() == 0 && point.getY() != 0) {
-            showPointInfo();
-            System.out.println(" na osi Y");
+            System.out.println(showPointInfo() + " na osi Y");
         } else if (point.getY() == 0 && point.getX() != 0) {
-            showPointInfo();
-            System.out.println(" na osi X");
+            System.out.println(showPointInfo() + " na osi X");
         } else if (point.getX() == 0 && point.getY() == 0) {
-            showPointInfo();
-            System.out.println(" na srodku ukladu wspolrzednych");
+            System.out.println(showPointInfo() + " na srodku ukladu wspolrzednych");
         }
     }
 
-    private void showPointInfo() {
-        System.out.print("Punkt: (" + point.getX() + "," + point.getY() + ") lezy");
+    private String showPointInfo() {
+        return ("Punkt: (" + point.getX() + "," + point.getY() + ") lezy");
     }
 
-    private void showQuarter() {
+    private String showQuarter() {
         if (point.getX() > 0 && point.getY() > 0) {
-            System.out.print("I");
+            return ("I");
         } else if (point.getX() < 0 && point.getY() > 0) {
-            System.out.print("II");
+            return ("II");
         } else if (point.getX() < 0 && point.getY() < 0) {
-            System.out.print("III");
+            return ("III");
         } else if (point.getX() > 0 && point.getY() < 0) {
-            System.out.print("IV");
+            return ("IV");
         }
+        return null;
     }
 
-    private void showQuarterInfo() {
-        System.out.print("Punkt: (" + point.getX() + "," + point.getY() + ") lezy w ");
-        showQuarter();
-        System.out.println(" cwiartce ukladu wspolrzednych");
+    private String showQuarterInfo() {
+        return ("Punkt: (" + point.getX() + "," + point.getY() + ") lezy w " + showQuarter() +
+                " cwiartce ukladu wspolrzednych");
     }
 
-    private void showAxis() {
+    private String showAxis() {
         if (point.getX() == 0) {
-            System.out.println("Punkt: (" + point.getX() + "," + point.getY() + ") lezy na osi X");
+            return ("Punkt: (" + point.getX() + "," + point.getY() + ") lezy na osi X");
         } else if (point.getY() == 0) {
-            System.out.println("Punkt: (" + point.getX() + "," + point.getY() + ") lezy na osi Y");
+            return ("Punkt: (" + point.getX() + "," + point.getY() + ") lezy na osi Y");
         }
+        return null;
     }
 }
