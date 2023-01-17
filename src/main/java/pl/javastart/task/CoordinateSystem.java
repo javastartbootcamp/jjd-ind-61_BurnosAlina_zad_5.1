@@ -32,7 +32,7 @@ public class CoordinateSystem {
     }
 
     private String showPointInfo() {
-        return ("Punkt: (" + point.getX() + "," + point.getY() + ") lezy");
+        return ("Punkt (" + point.getX() + "," + point.getY() + ") leży");
     }
 
     private String showQuarter() {
@@ -49,15 +49,15 @@ public class CoordinateSystem {
     }
 
     private String showQuarterInfo() {
-        return ("Punkt: (" + point.getX() + "," + point.getY() + ") lezy w " + showQuarter() +
+        return ("Punkt (" + point.getX() + "," + point.getY() + ") leży w " + showQuarter() +
                 " cwiartce ukladu wspolrzednych");
     }
 
     private String showAxis() {
         if (point.getX() == 0) {
-            return ("Punkt: (" + point.getX() + "," + point.getY() + ") lezy na osi X");
+            return ("Punkt (" + point.getX() + "," + point.getY() + ") leży na osi X");
         } else if (point.getY() == 0) {
-            return ("Punkt: (" + point.getX() + "," + point.getY() + ") lezy na osi Y");
+            return ("Punkt (" + point.getX() + "," + point.getY() + ") leży na osi Y");
         }
         return null;
     }
