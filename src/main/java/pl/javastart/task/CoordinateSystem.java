@@ -15,17 +15,17 @@ public class CoordinateSystem {
 
     void checkQuarter() {
         if (point.getX() > 0 && point.getY() > 0) {
-            System.out.println(showQuarterInfo());
+            showQuarterInfo();
         } else if (point.getX() < 0 && point.getY() > 0) {
-            System.out.println(showQuarterInfo());
+            showQuarterInfo();
         } else if (point.getX() < 0 && point.getY() < 0) {
-            System.out.println(showQuarterInfo());
+            showQuarterInfo();
         } else if (point.getX() > 0 && point.getY() < 0) {
-            System.out.println(showQuarterInfo());
+            showQuarterInfo();
         } else if (point.getX() == 0 && point.getY() != 0) {
-            System.out.println(showPointInfo() + " na osi Y");
+            showAxis();
         } else if (point.getY() == 0 && point.getX() != 0) {
-            System.out.println(showPointInfo() + " na osi X");
+            showAxis();
         } else if (point.getX() == 0 && point.getY() == 0) {
             System.out.println(showPointInfo() + " na środku układu współrzędnych");
         }
@@ -48,17 +48,17 @@ public class CoordinateSystem {
         return null;
     }
 
-    private String showQuarterInfo() {
-        return ("Punkt (" + point.getX() + ", " + point.getY() + ") leży w " + showQuarter() +
+    private void showQuarterInfo() {
+        System.out.println(showPointInfo() + " w " + showQuarter() +
                 " ćwiartce układu współrzędnych");
     }
 
-    private String showAxis() {
+    private void showAxis() {
         if (point.getX() == 0) {
-            return ("Punkt (" + point.getX() + ", " + point.getY() + ") leży na osi X");
+            System.out.println(showPointInfo() + " na osi Y");
         } else if (point.getY() == 0) {
-            return ("Punkt (" + point.getX() + ", " + point.getY() + ") leży na osi Y");
+            System.out.println(showPointInfo() + " na osi X");
         }
-        return null;
+
     }
 }
