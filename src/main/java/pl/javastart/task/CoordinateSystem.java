@@ -18,7 +18,9 @@ public class CoordinateSystem {
             showQuarterInfo(point);
         } else if (point.getX() == 0 && point.getY() == 0) {
             System.out.println(showPointInfo(point) + " na środku układu współrzędnych");
-        } else showAxisInfo(point);
+        } else {
+            showAxisInfo(point);
+        }
     }
 
     private String showPointInfo(Point point) {
