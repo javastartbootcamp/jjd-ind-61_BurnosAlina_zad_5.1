@@ -3,62 +3,50 @@ package pl.javastart.task;
 import java.util.Scanner;
 
 public class CoordinateSystem {
-    Point point = new Point();
 
     void run(Scanner scanner) {
+        Point point = new Point();
         System.out.println("Podaj X");
         point.setX(scanner.nextInt());
         System.out.println("Podaj Y");
         point.setY(scanner.nextInt());
-        checkQuarter();
+        findPosition(point);
     }
 
-    void checkQuarter() {
-        if (point.getX() > 0 && point.getY() > 0) {
-            showQuarterInfo();
-        } else if (point.getX() < 0 && point.getY() > 0) {
-            showQuarterInfo();
-        } else if (point.getX() < 0 && point.getY() < 0) {
-            showQuarterInfo();
-        } else if (point.getX() > 0 && point.getY() < 0) {
-            showQuarterInfo();
-        } else if (point.getX() == 0 && point.getY() != 0) {
-            showAxis();
-        } else if (point.getY() == 0 && point.getX() != 0) {
-            showAxis();
+    void findPosition(Point point) {
+        if (point.getX() != 0 && point.getY() != 0) {
+            showQuarterInfo(point);
         } else if (point.getX() == 0 && point.getY() == 0) {
-            System.out.println(showPointInfo() + " na środku układu współrzędnych");
-        }
+            System.out.println(showPointInfo(point) + " na środku układu współrzędnych");
+        } else showAxisInfo(point);
     }
 
-    private String showPointInfo() {
+    private String showPointInfo(Point point) {
         return ("Punkt (" + point.getX() + ", " + point.getY() + ") leży");
     }
 
-    private String showQuarter() {
+    private String getQuarter(Point point) {
         if (point.getX() > 0 && point.getY() > 0) {
             return ("I");
         } else if (point.getX() < 0 && point.getY() > 0) {
             return ("II");
         } else if (point.getX() < 0 && point.getY() < 0) {
             return ("III");
-        } else if (point.getX() > 0 && point.getY() < 0) {
+        } else {
             return ("IV");
         }
-        return null;
     }
 
-    private void showQuarterInfo() {
-        System.out.println(showPointInfo() + " w " + showQuarter() +
+    private void showQuarterInfo(Point point) {
+        System.out.println(showPointInfo(point) + " w " + getQuarter(point) +
                 " ćwiartce układu współrzędnych");
     }
 
-    private void showAxis() {
-        if (point.getX() == 0) {
-            System.out.println(showPointInfo() + " na osi Y");
-        } else if (point.getY() == 0) {
-            System.out.println(showPointInfo() + " na osi X");
+    private void showAxisInfo(Point point) {
+        if (point.getX() == 0 && point.getY() != 0) {
+            System.out.println(showPointInfo(point) + " na osi Y");
+        } else if (point.getY() == 0 && point.getX() != 0) {
+            System.out.println(showPointInfo(point) + " na osi X");
         }
-
     }
 }
